@@ -46,13 +46,13 @@ ul {
 }
 
 .paragraph-color {
-  color: var.$gray-100;
+  color: var.$blue-200;
 }
 
 .two-columns {
   grid-template-columns: 1fr;
 
-  @include tool.mq-min(func.rem(600)) {
+  @include tool.mq-min(func.rem(800)) {
     grid-template-columns: 1fr 1fr;
   }
 }

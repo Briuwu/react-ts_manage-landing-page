@@ -37,15 +37,6 @@ $md: func.rem(800);
 
 @media (max-width: $md) {
   .nav {
-    &.active::after {
-      content: "";
-      position: fixed;
-      z-index: -1;
-      inset: 0;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.25);
-    }
-
     &__items {
       > li {
         font-weight: 700;
@@ -63,7 +54,8 @@ $md: func.rem(800);
         right: 0;
         top: 4em;
         padding-block: 3em;
-        background-color: white;
+        margin-inline: 1em;
+        background-color: var.$red-100;
       }
     }
   }

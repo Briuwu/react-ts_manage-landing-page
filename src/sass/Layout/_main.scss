@@ -1,0 +1,44 @@
+@use "../Utils/functions" as func;
+@use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
+
+.app {
+  position: relative;
+}
+
+.hero {
+  text-align: center;
+  place-items: center;
+
+  @include tool.mq-min(800px) {
+    text-align: left;
+  }
+}
+
+.bg-blob {
+  > img {
+    margin-inline: auto;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    width: 87%;
+    max-height: 70vh;
+    max-height: 70dvh;
+    aspect-ratio: 1 / 1.2;
+    background-image: url("./assets/images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+
+    @include tool.mq-min(800px) {
+      width: 45%;
+    }
+  }
+
+  @include tool.mq-max(800px) {
+    order: -1;
+  }
+}
