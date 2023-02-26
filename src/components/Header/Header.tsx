@@ -3,10 +3,16 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header>
-      <img src="" alt="" />
+    <header className="header flex container">
+      <img
+        className="header__logo"
+        src="./assets/images/logo.svg"
+        alt="Managa Logo"
+      />
       <Nav />
-      <a href="#">Get Started</a>
+      <a className="header__start primary-btn btn" href="#">
+        Get Started
+      </a>
     </header>
   );
 };

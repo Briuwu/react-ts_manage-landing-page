@@ -1,0 +1,87 @@
+@use "../Utils/functions" as func;
+@use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
+
+$md: func.rem(800);
+
+.header {
+  position: relative;
+
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    margin-block: 2em;
+  }
+
+  &__start {
+    display: none;
+
+    @include tool.mq-min($md) {
+      display: block;
+    }
+  }
+}
+
+.nav {
+  &__items {
+    --gap: 2em;
+
+    > li {
+      cursor: pointer;
+      color: var.$blue-400;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .nav {
+    &.active::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      inset: 0;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    &__items {
+      > li {
+        font-weight: 700;
+      }
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 4em;
+        padding-block: 3em;
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .nav {
+    &__btn {
+      display: none;
+    }
+
+    &__items {
+      &.mobile {
+        display: none;
+      }
+      &.desktop {
+        display: flex;
+      }
+    }
+  }
+}

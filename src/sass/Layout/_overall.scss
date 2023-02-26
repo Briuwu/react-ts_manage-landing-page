@@ -1,0 +1,65 @@
+@use "../Utils/variables" as var;
+@use "../Utils/functions" as func;
+@use "../Utils/toolkits" as tool;
+
+body {
+  font-family: var.$ff;
+}
+
+a,
+button {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-inline: func.fluid(16, 5vw, 64);
+  max-width: func.rem(1440);
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, func.rem(16));
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, func.rem(16));
+}
+
+.heading-color {
+  color: var.$blue-400;
+}
+
+.paragraph-color {
+  color: var.$gray-100;
+}
+
+.two-columns {
+  grid-template-columns: 1fr;
+
+  @include tool.mq-min(func.rem(600)) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.primary-btn {
+  background-color: var.$red-200;
+  color: var.$gray-100;
+  padding: 1em 2em;
+  border-radius: 2em;
+}
