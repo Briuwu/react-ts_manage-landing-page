@@ -1,6 +1,9 @@
+@use "../Utils/functions" as func;
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
 
 $ff: "Be Vietnam Pro", sans-serif;
+
+$md-size: func.rem(800);
 
 // COLORS
 $gray-100: hsl(0, 0%, 98%);

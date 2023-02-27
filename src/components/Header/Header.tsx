@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <header className="header flex container">
+    <header className="header container">
       <img
         className="header__logo"
         src="./assets/images/logo.svg"

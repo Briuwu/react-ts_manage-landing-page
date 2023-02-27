@@ -31,28 +31,18 @@ ul {
   margin-inline: auto;
 }
 
-.grid {
-  display: grid;
-  gap: var(--gap, func.rem(16));
-}
-
-.flex {
-  display: flex;
-  gap: var(--gap, func.rem(16));
-}
-
-.heading-color {
+.primary-color {
   color: var.$blue-400;
 }
 
-.paragraph-color {
+.secondary-color {
   color: var.$blue-200;
 }
 
 .two-columns {
   grid-template-columns: 1fr;
 
-  @include tool.mq-min(func.rem(800)) {
+  @include tool.mq-min(var.$md-size) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -62,4 +52,9 @@ ul {
   color: var.$gray-100;
   padding: 1em 2em;
   border-radius: 2em;
+}
+
+.main {
+  display: grid;
+  gap: 3em;
 }

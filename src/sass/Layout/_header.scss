@@ -2,9 +2,8 @@
 @use "../Utils/variables" as var;
 @use "../Utils/toolkits" as tool;
 
-$md: func.rem(800);
-
 .header {
+  display: flex;
   position: relative;
 
   align-items: center;
@@ -17,7 +16,7 @@ $md: func.rem(800);
   &__start {
     display: none;
 
-    @include tool.mq-min($md) {
+    @include tool.mq-min(var.$md-size) {
       display: block;
     }
   }
@@ -25,7 +24,8 @@ $md: func.rem(800);
 
 .nav {
   &__items {
-    --gap: 2em;
+    display: flex;
+    gap: 2em;
 
     > li {
       cursor: pointer;
@@ -35,7 +35,7 @@ $md: func.rem(800);
   }
 }
 
-@media (max-width: $md) {
+@media (max-width: var.$md-size) {
   .nav {
     &__items {
       > li {
@@ -61,7 +61,7 @@ $md: func.rem(800);
   }
 }
 
-@media (min-width: $md) {
+@media (min-width: var.$md-size) {
   .nav {
     &__btn {
       display: none;

@@ -6,9 +6,12 @@
   position: relative;
 }
 
+// HERO SECTION
 .hero {
+  display: grid;
   text-align: center;
   place-items: center;
+  gap: 1em;
 
   @include tool.mq-min(800px) {
     text-align: left;
@@ -40,5 +43,16 @@
 
   @include tool.mq-max(800px) {
     order: -1;
+  }
+}
+
+// OFFERS SECTION
+.offers {
+  display: grid;
+  gap: 2em;
+
+  &__lists {
+    display: grid;
+    gap: 1em;
   }
 }

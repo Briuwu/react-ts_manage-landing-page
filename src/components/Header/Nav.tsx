@@ -38,11 +38,11 @@ const Nav = () => {
         <span className="sr-only">menu</span>
       </button>
       {/* NAV ITEMS FOR MOBILE */}
-      <motion.ul variants={navContainer} className={`nav__items flex mobile`}>
+      <motion.ul variants={navContainer} className={`nav__items mobile`}>
         {navItemsElement}
       </motion.ul>
       {/* NAV ITEMS FOR DESKTOP */}
-      <ul className={`nav__items flex desktop`}>{navItemsDesktop}</ul>
+      <ul className={`nav__items desktop`}>{navItemsDesktop}</ul>
     </motion.nav>
   );
 };
