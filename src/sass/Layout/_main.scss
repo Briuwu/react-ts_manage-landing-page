@@ -13,8 +13,40 @@
   place-items: center;
   gap: 1em;
 
-  @include tool.mq-min(800px) {
+  &__title {
+    font-size: func.fluid(28, 3.5vw, 50);
+  }
+
+  &__desc {
+    line-height: 1.8;
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  @include tool.mq-min(var.$md-size) {
     text-align: left;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 2em;
+    }
+
+    &__btn {
+      display: block;
+    }
+
+    &__title {
+      padding-right: 2em;
+    }
+
+    &__desc {
+      max-width: 400px;
+      margin-right: auto;
+    }
   }
 }
 
@@ -36,12 +68,12 @@
     background-repeat: no-repeat;
     background-position: bottom left;
 
-    @include tool.mq-min(800px) {
+    @include tool.mq-min(var.$md-size) {
       width: 45%;
     }
   }
 
-  @include tool.mq-max(800px) {
+  @include tool.mq-max(var.$md-size) {
     order: -1;
   }
 }
@@ -50,9 +82,59 @@
 .offers {
   display: grid;
   gap: 2em;
+  line-height: 1.8;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: func.rem(32);
+    margin-bottom: func.rem(10);
+  }
 
   &__lists {
     display: grid;
     gap: 1em;
+
+    &-each {
+      .title {
+        font-size: func.rem(15);
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        background-color: var.$red-100;
+
+        > span {
+          display: grid;
+          place-items: center;
+          border-radius: 2em;
+          height: 30px;
+          width: 55px;
+          background-color: var.$red-200;
+          color: var.$gray-100;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: var.$md-size) {
+  .offers {
+    &__heading {
+      text-align: left;
+      max-width: func.rem(500);
+    }
+
+    &__lists {
+      &-each {
+        .title {
+          background-color: transparent;
+        }
+        .desc {
+          padding-left: 4.5em;
+        }
+      }
+    }
   }
 }

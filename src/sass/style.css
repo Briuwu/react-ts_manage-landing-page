@@ -136,8 +136,10 @@ ul {
 .primary-btn {
   background-color: hsl(12, 88%, 59%);
   color: hsl(0, 0%, 98%);
-  padding: 1em 2em;
+  font-size: clamp(0.625rem, 15vw, 1rem);
+  padding: 0.75em 2em;
   border-radius: 2em;
+  box-shadow: 0px 10px 16px -3px rgba(242, 95, 58, 0.28);
 }
 
 .main {
@@ -165,12 +167,13 @@ ul {
 
 .nav__items {
   display: flex;
-  gap: 2em;
+  gap: clamp(1rem, 2.5vw, 2rem);
 }
 .nav__items > li {
   cursor: pointer;
   color: hsl(228, 39%, 23%);
   font-weight: 500;
+  font-size: clamp(0.875rem, 5vw, 1rem);
 }
 
 @media (max-width: 50rem) {
@@ -214,9 +217,34 @@ ul {
   place-items: center;
   gap: 1em;
 }
-@media only screen and (min-width: 800px) {
+.hero__title {
+  font-size: clamp(1.75rem, 3.5vw, 3.125rem);
+}
+.hero__desc {
+  line-height: 1.8;
+}
+.hero__btn {
+  display: none;
+}
+@media only screen and (min-width: 50rem) {
   .hero {
     text-align: left;
+  }
+  .hero__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2em;
+  }
+  .hero__btn {
+    display: block;
+  }
+  .hero__title {
+    padding-right: 2em;
+  }
+  .hero__desc {
+    max-width: 400px;
+    margin-right: auto;
   }
 }
 
@@ -237,12 +265,12 @@ ul {
   background-repeat: no-repeat;
   background-position: bottom left;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 50rem) {
   .bg-blob::before {
     width: 45%;
   }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50rem) {
   .bg-blob {
     order: -1;
   }
@@ -251,8 +279,45 @@ ul {
 .offers {
   display: grid;
   gap: 2em;
+  line-height: 1.8;
+}
+.offers__heading {
+  text-align: center;
+}
+.offers__title {
+  font-size: 2rem;
+  margin-bottom: 0.625rem;
 }
 .offers__lists {
   display: grid;
   gap: 1em;
+}
+.offers__lists-each .title {
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background-color: hsl(13, 100%, 96%);
+}
+.offers__lists-each .title > span {
+  display: grid;
+  place-items: center;
+  border-radius: 2em;
+  height: 30px;
+  width: 55px;
+  background-color: hsl(12, 88%, 59%);
+  color: hsl(0, 0%, 98%);
+}
+
+@media only screen and (min-width: 50rem) {
+  .offers__heading {
+    text-align: left;
+    max-width: 31.25rem;
+  }
+  .offers__lists-each .title {
+    background-color: transparent;
+  }
+  .offers__lists-each .desc {
+    padding-left: 4.5em;
+  }
 }/*# sourceMappingURL=style.css.map */

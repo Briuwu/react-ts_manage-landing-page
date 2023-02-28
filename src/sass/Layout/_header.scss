@@ -25,12 +25,13 @@
 .nav {
   &__items {
     display: flex;
-    gap: 2em;
+    gap: func.fluid(16, 2.5vw, 32);
 
     > li {
       cursor: pointer;
       color: var.$blue-400;
       font-weight: 500;
+      font-size: func.fluid(14, 5vw, 16);
     }
   }
 }

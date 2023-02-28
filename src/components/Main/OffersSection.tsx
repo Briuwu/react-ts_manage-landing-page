@@ -30,8 +30,10 @@ const OffersSection = () => {
   return (
     <section className="offers container two-columns">
       <div className="offers__heading">
-        <h2 className="primary-color">What's the different about Manage?</h2>
-        <p className="secondary-color">
+        <h2 className="offers__title primary-color">
+          What's different about Manage?
+        </h2>
+        <p className="offers__desc secondary-color">
           Manage provides all the functionality your team needs, without the
           complexity. Our software is tailor-made for modern digital product
           teams.
@@ -43,7 +45,7 @@ const OffersSection = () => {
             <h3 className="title primary-color">
               <span className="number">0{el.id}</span> {el.title}
             </h3>
-            <p className="desc secondary-color">{el.desc}</p>
+            <p className="desc max-width secondary-color">{el.desc}</p>
           </div>
         ))}
       </div>

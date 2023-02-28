@@ -50,8 +50,10 @@ ul {
 .primary-btn {
   background-color: var.$red-200;
   color: var.$gray-100;
-  padding: 1em 2em;
+  font-size: func.fluid(10, 15vw, 16);
+  padding: 0.75em 2em;
   border-radius: 2em;
+  box-shadow: 0px 10px 16px -3px rgba(242, 95, 58, 0.28);
 }
 
 .main {
