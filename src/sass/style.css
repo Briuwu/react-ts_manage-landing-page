@@ -134,6 +134,7 @@ ul {
 }
 
 .primary-btn {
+  display: block;
   background-color: hsl(12, 88%, 59%);
   color: hsl(0, 0%, 98%);
   font-size: clamp(0.625rem, 15vw, 1rem);
@@ -233,7 +234,7 @@ ul {
   .hero__info {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 2em;
   }
   .hero__btn {
@@ -319,5 +320,75 @@ ul {
   }
   .offers__lists-each .desc {
     padding-left: 4.5em;
+  }
+}
+.reviews {
+  overflow: hidden;
+  text-align: center;
+}
+.reviews__all {
+  display: grid;
+  padding-top: 5em;
+  padding-bottom: 1em;
+  gap: 3em;
+}
+.reviews__all.desktop {
+  display: none;
+}
+.reviews__each {
+  position: relative;
+  display: grid;
+  gap: 1em;
+  justify-items: center;
+  text-align: center;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(227, 12%, 61%);
+  border-radius: 0.5em;
+  padding: 3em 1.5em;
+}
+.reviews__each .name {
+  font-weight: 700;
+  color: hsl(228, 39%, 23%);
+}
+.reviews__each .desc {
+  font-size: 0.9375rem;
+}
+.reviews__each img {
+  position: absolute;
+  width: 5em;
+  top: -3em;
+}
+.reviews__selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.reviews__selection-each {
+  aspect-ratio: 1;
+  width: 0.75em;
+  border-radius: 100%;
+  border: 1px solid hsl(12, 88%, 59%);
+}
+.reviews__selection-each.active {
+  background-color: hsl(12, 88%, 59%);
+}
+
+@media only screen and (min-width: 50rem) {
+  .reviews {
+    max-width: 1440px;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+  .reviews__selection {
+    display: none;
+  }
+  .reviews__all.mobile {
+    display: none;
+  }
+  .reviews__all.desktop {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 34%;
   }
 }/*# sourceMappingURL=style.css.map */
