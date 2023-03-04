@@ -31,10 +31,12 @@ const reviewsArray = [
 const ReviewsSection = () => {
   const [selectedReview, setSelectedReview] = useState("Ali Bravo");
   const [width, setWidth] = useState(0);
-  const carousel = useRef<HTMLDivElement>(null!);
+  const carousel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    if (carousel.current) {
+      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }
   }, []);
 
   const reviewToDisplay = reviewsArray.filter((el) => {
@@ -80,6 +82,9 @@ const ReviewsSection = () => {
         {slidesDesktopElement}
       </motion.ul>
       <div className="reviews__selection">{slidesSelection}</div>
+      <a href="#" className="primary-btn">
+        Get Started
+      </a>
     </section>
   );
 };

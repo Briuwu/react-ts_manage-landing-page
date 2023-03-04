@@ -1,0 +1,89 @@
+@use "../Utils/functions" as func;
+@use "../Utils/variables" as var;
+@use "../Utils/toolkits" as tool;
+
+.footer {
+  color: var.$gray-100;
+
+  &__simplify {
+    background-color: var.$red-200;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 1em;
+    padding-block: 5em;
+    padding-inline: 1em;
+
+    p {
+      font-size: func.rem(40);
+      font-weight: 700;
+    }
+
+    a {
+      background-color: var.$gray-100;
+      color: var.$red-200;
+    }
+  }
+
+  &__about {
+    background-color: var.$blue-700;
+    color: var.$gray-100;
+
+    &-container {
+      max-width: 1440px;
+      margin-inline: auto;
+      padding: 2em;
+      display: grid;
+      gap: 2em;
+    }
+
+    &-contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-inline: 1em;
+      > div {
+        display: grid;
+        gap: 0.75em;
+      }
+    }
+
+    &-logo,
+    &-copyright {
+      justify-self: center;
+    }
+
+    &-socials {
+      display: flex;
+      justify-content: space-between;
+
+      > img {
+        width: 2em;
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+
+  gap: 1em;
+
+  button {
+    background-color: var.$red-200;
+    color: var.$gray-100;
+    padding: 0.5em 1.5em;
+    border-radius: 3em;
+    text-transform: uppercase;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 2.5em;
+    padding: 0.75em;
+
+    &::placeholder {
+      font-size: func.rem(12);
+    }
+  }
+}
