@@ -25,17 +25,18 @@
     }
   }
 
+  &-container {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: 2em;
+    padding-inline: func.fluid(16, 5vw, 64);
+    display: grid;
+    gap: 2em;
+  }
+
   &__about {
     background-color: var.$blue-700;
     color: var.$gray-100;
-
-    &-container {
-      max-width: 1440px;
-      margin-inline: auto;
-      padding: 2em;
-      display: grid;
-      gap: 2em;
-    }
 
     &-contact {
       display: flex;
@@ -84,6 +85,64 @@ form {
 
     &::placeholder {
       font-size: func.rem(12);
+    }
+  }
+}
+
+@media only screen and (min-width: var.$md-size) {
+  .footer {
+    &__simplify {
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      a {
+        margin-left: auto;
+      }
+    }
+
+    &__about {
+      .footer-container {
+        grid-template-columns: 0.7fr 1fr 1fr;
+        align-items: center;
+      }
+
+      form {
+        grid-column: 3;
+        grid-row: 1 / 2;
+      }
+
+      &-contact {
+        grid-column: 2 / 3;
+        grid-row: span 2;
+        justify-content: space-between;
+      }
+
+      &-logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 1;
+        margin-right: auto;
+      }
+
+      &-copyright {
+        margin-left: auto;
+      }
+
+      &-socials {
+        justify-self: center;
+        margin-right: auto;
+        gap: 1em;
+
+        > img {
+          width: 1.5em;
+        }
+      }
     }
   }
 }

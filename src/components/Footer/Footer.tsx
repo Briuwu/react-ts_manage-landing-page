@@ -5,13 +5,15 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__simplify">
-        <p>Simplify how your team works today.</p>
-        <a href="#" className="primary-btn">
-          Get Started
-        </a>
+        <div className="footer-container">
+          <p>Simplify how your team works today.</p>
+          <a href="#" className="primary-btn">
+            Get Started
+          </a>
+        </div>
       </div>
       <div className="footer__about">
-        <div className="footer__about-container">
+        <div className="footer-container">
           <Contact />
           <ul className="footer__about-contact">
             <div>

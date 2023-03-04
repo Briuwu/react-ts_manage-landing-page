@@ -60,6 +60,7 @@ const ReviewsSection = () => {
 
   const slidesSelection = reviewsArray.map((el) => (
     <button
+      key={el.id}
       className={`reviews__selection-each ${
         el.name === selectedReview ? "active" : ""
       }`}
